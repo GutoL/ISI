@@ -1,0 +1,251 @@
+<!--
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <title>Monte seu sanduiche</title>
+  <meta name="viewport" content="width=device-width">
+
+
+	<script>
+	
+		function verificar() {
+			var CheckMaximo = 2;
+			var Marcados = 1;
+			var objCheck = document.forms['form1'].elements['molho'];
+
+			//Percorrendo os checks para ver quantos foram selecionados:
+			for (var iLoop = 0; iLoop<objCheck.length; iLoop++) {
+				//Se o número máximo de checkboxes ainda não tiver sido atingido, continua a verificação:
+				if (Marcados <= CheckMaximo) {
+					if (objCheck[iLoop].checked) {
+						Marcados++;
+					}
+						//Habilitando todos os checkboxes, pois o máximo ainda não foi alcançado.
+						for (var i=0; i<objCheck.length; i++) {
+							objCheck[i].disabled = false;
+						}	
+				//Caso contrário, desabilitar o checkbox;
+				//Nesse caso, é necessário percorrer todas as opções novamente, desabilitando as não checadas;
+				} else {
+					for (var i=0; i<objCheck.length; i++) {
+						if(objCheck[i].checked == false) {
+							objCheck[i].disabled = true;
+						}	
+					}
+				}
+			}
+		}// fim da função de verificar
+	
+	
+	
+	</script>
+  
+  
+</head>
+
+
+<body>
+
+
+<div class="row">
+	<div class="col-sm-12">
+		<img alt="Brand" src="img/banner.png" class="img-responsive">
+	</div>
+</div>
+
+-->
+<script>
+	
+	var palavra = "Olá "+nomeUsuario+", monte seu sanduíche! ";
+	$('#nomefb').text(palavra).attr({
+		title:"Monte seu sanduiche!"
+					});
+	
+
+</script>
+
+<form name="form1">
+			<div class="row">
+				<div class="col-sm-4">
+					
+					<h4 for="nome" id="nomefb"></h4>
+					<fieldset>
+						
+						<legend>Pão</legend>
+						<select name="tipo-pao" id="tipo-pao" class="form-control">
+							<option value="italiano">Italiano Branco</option>
+							<option value="graos">9 Grãos</option>
+							<option value="parmesao">Parmesão e Orégano</option>
+							<option value="tresQueijos">Três Queijos</option>
+							<option value="noveGraos">9 Grãos com Aveia e Mel</option>
+						</select> <br>
+						
+						
+						<legend>Tamanho</legend>
+							<input type="radio" name="tamanho" value="15">15 cm<br>
+							<input type="radio" name="tamanho" value="30">30 cm	<br><br>	
+						
+						
+						<legend>Recheio</legend>
+						<select name="tipo-recheio" id="tipo-recheio" class="form-control">
+							<option value="teriaki">Frango Teriaki</option>
+							<option value="bmt">B.M.T.</option>
+							<option value="sublime">Frango e Bacon Sublime</option>
+							<option value="vegetariano">Vegetariano</option>
+							<option value="italiano">Italiano</option>
+						</select><br>
+				
+						<legend>Queijos</legend>
+						<select name="tipo-queijo" id="tipo-queijo" class="form-control">
+							<option value="suico">Suíço</option>
+							<option value="prato">Prato</option>
+							<option value="cheddar">Cheddar</option>
+						</select><br>
+						
+						
+						
+						
+					</fieldset>
+					
+					
+				</div>
+				
+				<div class="col-md-4">
+					
+					<legend>Adicionais</legend>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="bacon" name="adicional" >
+							Bacon
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="tomate" name="adicional" >
+							Tomate Seco
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="chreamCheese" name="adicional" >
+							Cream Cheese
+							</label>
+						</div><br>
+						
+						<legend>Vegetais</legend>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="alface" name="vegetais" >
+							Alface
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="tomate" name="vegetais" >
+							Tomate
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="rucula" name="vegetais" >
+							Rúcula
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="pimentao" name="vegetais" >
+							Pimentão
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="pepino" name="vegetais" >
+							Pepino
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="cebola" name="vegetais" >
+							Cebola
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="azeitona" name="vegetais" >
+							Azeitona
+							</label>
+						</div>
+						
+				
+				</div>
+				<div class="col-md-4">
+				
+					<legend>Molhos (selecione apenas dois molhos)</legend>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="chiplote" name="molho" id="molho" onclick="verificar()">
+							Chipotle
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="parmesao" name="molho" id="molho" onclick="verificar()">
+							Parmesão
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="babercue" name="molho" id="molho" onclick="verificar()">
+							Babercue
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="maionese" name="molho" id="molho" onclick="verificar()">
+							Maionese
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="cebola" name="molho" id="molho" onclick="verificar()">
+							Cebola Agridoce
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+							<input type="checkbox" value="mostarda" name="molho" id="molho" onclick="verificar()">
+							Mostarda
+							</label>
+						</div>
+						
+					
+						<button type="submit" class="btn btn-success" onClick="Confirmar()" id='btLogin'>
+								<span class="glyphicon glyphicon-thumbs-up" ></span>
+								Confirmar          
+							</button><br><br>
+							
+						<button type="submit" class="btn btn-danger" onClick="logOut()" id='btLogin'>
+								<!--<span class="glyphicon glyphicon-thumbs-up" ></span>-->
+								Fazer Logout            
+							</button>
+							
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<br><img alt="Brand" src="bootstrap/img/sanduiche.jpg" class="img-responsive">
+								</div>
+							</div>
+
+				</div>
+				
+				
+			</div>
+			
+			
+			
+		</form>
+<!--		
+</body>
+</html>-->

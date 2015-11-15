@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-BR">
+
+	<head>
+		
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		
+		<meta charset=UTF-8>
+		<title> Login com facebook </title>
+		
+		<script type="text/javascript" src="bootstrap/jquery.js"> </script>
+		
+		<script type="text/javascript">
+		
+		var nomeUsuario;
+		
+		/////////////////////////////////////////////////CÓDIGO DO FACEBOOK///////////////////////////////////////////////////////////////////////////
+		
+		window.fbAsyncInit = function() {
+			  FB.init({
+				appId      : '1046768882041202',
+				cookie     : true,  // enable cookies to allow the server to access 
+									// the session
+				//xfbml      : true,  // parse social plugins on this page
+				version    : 'v2.2' // use version 2.2
+			  });
+			  
+			  FB.getLoginStatus(function(response) {
+					callBackMudancasStatus(response);
+			  });
+						  
+			};
+			
+			(function(d, s, id){
+				 var js, fjs = d.getElementsByTagName(s)[0];
+				 if (d.getElementById(id)) {return;}
+				 js = d.createElement(s); js.id = id;
+				 js.src = "//connect.facebook.net/en_US/sdk.js";
+				 fjs.parentNode.insertBefore(js, fjs);
+			 }(document, 'script', 'facebook-jssdk'));
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+			function callBackMudancasStatus(response){
+				//o objeto de resposta é retornado com o campo de status, que faz com que o aplicativo
+				//saiba o status de login da pessoa atual
+				
+				if(response.status === 'connected'){
+					
+					FB.api('/me',function(response){
+					nomeUsuario = response.name;
+					});
+					
+					//$('#status').append('<a href="javascript:void(0);" id= "logout" onclick="logOut();"> Sair </a>');
+					
+					//console.log(nomeUsuario);
+					$('#btLogin').on('click', function(){
+						$('#main').load('sub.html')
+						
+					});
+					
+					
+				}
+				
+				//$("#nome").val("Ola guto");
+			}// fim da função de mudar status do facebook
+			
+
+			
+			function testAPI(){
+				
+				FB.api('/me',function(response){
+					$('#status').append('<p>Ola '+response.name+' seja bem vindo</p>');
+					console.log(response);
+				});
+				
+			}
+			
+			function logOut(){
+				
+				
+				FB.logout(function(response){
+					
+					callBackMudancasStatus(response);
+					
+					
+				});
+				
+			}
+			
+			function login(){
+				
+				FB.login(function(response){
+					
+					
+					$('#btLogin').text("Monte seu sanduiche!").attr({
+						title:"Monte seu sanduiche!"
+					});
+					
+					callBackMudancasStatus(response);
+				});
+				
+			}
+			
+			function verificar() {
+				var CheckMaximo = 2;
+				var Marcados = 1;
+				var objCheck = document.forms['form1'].elements['molho'];
+
+				//Percorrendo os checks para ver quantos foram selecionados:
+				for (var iLoop = 0; iLoop<objCheck.length; iLoop++) {
+					//Se o número máximo de checkboxes ainda não tiver sido atingido, continua a verificação:
+					if (Marcados <= CheckMaximo) {
+						if (objCheck[iLoop].checked) {
+							Marcados++;
+						}
+							//Habilitando todos os checkboxes, pois o máximo ainda não foi alcançado.
+							for (var i=0; i<objCheck.length; i++) {
+								objCheck[i].disabled = false;
+							}	
+					//Caso contrário, desabilitar o checkbox;
+					//Nesse caso, é necessário percorrer todas as opções novamente, desabilitando as não checadas;
+					} else {
+						for (var i=0; i<objCheck.length; i++) {
+							if(objCheck[i].checked == false) {
+								objCheck[i].disabled = true;
+							}	
+						}
+					}
+				}
+			}// fim da função de verificar
+			
+		</script>
+	
+	</head>
+
+	<body>
+	
+		
+		<div class="row">
+			<div class="col-sm-12">
+				<img alt="Brand" src="bootstrap/img/banner.png" class="img-responsive">
+			</div>
+		</div>
+		
+		<div id = "main">
+		
+		<div class="row">
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4">
+			<h2>Faça Login par montar e</h2>
+			<h2>pedir o seu sanduíche!</h2>
+			</div>
+		</div>
+		
+		<div class="row">
+			
+			<div class="col-md-5">
+			</div>
+			<div class="col-md-4">
+				
+				
+				<button type="submit" class="btn btn-primary" onClick="login()" id='btLogin'>
+								<span class="glyphicon glyphicon-thumbs-up" ></span>
+								Fazer Login            
+							</button>
+				
+			
+			</div>
+		</div>
+		</div>
+		
+		
+	
+	</body>
+
+</html>
