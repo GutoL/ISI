@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.io.IOException;
@@ -53,11 +48,11 @@ public class Servlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    /*@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-    }
+    }*/
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -70,7 +65,29 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        String tipoPao = request.getParameter("tipo-pao");
+        int tamanho = Integer.parseInt(request.getParameter("tamanho"));
+        String recheio = request.getParameter("tipo-recheio");
+        String queijo = request.getParameter("tipo-queijo");
+        
+        //pegando adicionais
+        boolean cbAdicional1 = request.getParameter("bacon") != null;
+        boolean cbAdicional2 = request.getParameter("tomaSeco") != null;
+        boolean cbAdicional3 = request.getParameter("chreamCheese") != null;
+        
+        //pegando vegetais
+        boolean cbVegetal1 = request.getParameter("") != null;
+        boolean cbVegetal2 = request.getParameter("") != null;
+        boolean cbVegetal3 = request.getParameter("") != null;
+        boolean cbVegetal4 = request.getParameter("") != null;
+        boolean cbVegetal5 = request.getParameter("") != null;
+        boolean cbVegetal6 = request.getParameter("") != null;
+        boolean cbVegetal7 = request.getParameter("") != null;
+        
+        //pegando molhos
+        boolean cbMolho1 = request.getParameter("") != null;
+        boolean cbMolho2 = request.getParameter("") != null;
     }
 
     /**
