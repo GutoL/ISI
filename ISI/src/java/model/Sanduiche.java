@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- *
+ * 
  * @author Leylane
  */
 public final class Sanduiche {
@@ -16,6 +16,17 @@ public final class Sanduiche {
     private ArrayList<Boolean> adicionais;
     private ArrayList<Boolean> vegetais;
     private ArrayList<Boolean> molhos;
+    
+    /**
+     * Construtor da Classe. Pega todos os atributos e os seta. 
+     * @param tipoPao 
+     * @param tamanho
+     * @param recheio
+     * @param queijo
+     * @param adicionais
+     * @param vegetais
+     * @param molhos 
+     */
     
    public Sanduiche(String tipoPao, int tamanho, String recheio, String queijo, 
            ArrayList<Boolean> adicionais,ArrayList<Boolean> vegetais, ArrayList<Boolean> molhos){
@@ -37,11 +48,7 @@ public final class Sanduiche {
        setVegetais(vegetais);
        setMolhos(molhos);
    }
-
-    public Sanduiche() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
     public String getTipoPao() {
         return tipoPao;
     }

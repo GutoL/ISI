@@ -33,7 +33,7 @@ public class Servlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Servlet</title>");            
+            out.println("<title>Servlet Servlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
@@ -52,11 +52,10 @@ public class Servlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     /*@Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }*/
-
+     protected void doGet(HttpServletRequest request, HttpServletResponse response)
+     throws ServletException, IOException {
+     processRequest(request, response);
+     }*/
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -73,49 +72,43 @@ public class Servlet extends HttpServlet {
         int tamanho = Integer.parseInt(request.getParameter("tamanho"));
         String recheio = request.getParameter("tipo-recheio");
         String queijo = request.getParameter("tipo-queijo");
-        
+
+        Subway sub = new Subway();
+
         //pegando adicionais
         boolean cbAdicional1 = request.getParameter("bacon") != null;
         boolean cbAdicional2 = request.getParameter("tomaSeco") != null;
         boolean cbAdicional3 = request.getParameter("chreamCheese") != null;
-        
-        ArrayList<Boolean> adicional = new ArrayList<>();
-        adicional.add(cbAdicional1);
-        adicional.add(cbAdicional2);
-        adicional.add(cbAdicional3);
-        
+
+        ArrayList<Boolean> adicional;
+        adicional = sub.checaItem(cbAdicional1, cbAdicional2, cbAdicional3, false, false, false, false);
+
         //pegando vegetais
-        boolean cbVegetal1 = request.getParameter("") != null;
-        boolean cbVegetal2 = request.getParameter("") != null;
-        boolean cbVegetal3 = request.getParameter("") != null;
-        boolean cbVegetal4 = request.getParameter("") != null;
-        boolean cbVegetal5 = request.getParameter("") != null;
-        boolean cbVegetal6 = request.getParameter("") != null;
-        boolean cbVegetal7 = request.getParameter("") != null;
-        
-        ArrayList<Boolean> vegetal = new ArrayList<>();
-        vegetal.add(cbVegetal1);
-        vegetal.add(cbVegetal2);
-        vegetal.add(cbVegetal3);
-        vegetal.add(cbVegetal4);
-        vegetal.add(cbVegetal5);
-        vegetal.add(cbVegetal6);
-        vegetal.add(cbVegetal7);
-        
+        boolean cbVegetal1 = request.getParameter("vegetais") != null;
+        boolean cbVegetal2 = request.getParameter("vegetais") != null;
+        boolean cbVegetal3 = request.getParameter("vegetais") != null;
+        boolean cbVegetal4 = request.getParameter("vegetais") != null;
+        boolean cbVegetal5 = request.getParameter("vegetais") != null;
+        boolean cbVegetal6 = request.getParameter("vegetais") != null;
+        boolean cbVegetal7 = request.getParameter("vegetais") != null;
+
+        ArrayList<Boolean> vegetal = sub.checaItem(cbVegetal1, cbVegetal2, cbVegetal3, cbVegetal4, cbVegetal5, cbVegetal6, cbVegetal7);
+
         //pegando molhos
-        boolean cbMolho1 = request.getParameter("") != null;
-        boolean cbMolho2 = request.getParameter("") != null;
-        
-        ArrayList<Boolean> molho = new ArrayList<>();
-        molho.add(cbMolho1);
-        molho.add(cbMolho2);
-           
-        Subway sub = new Subway();
+        boolean cbMolho1 = request.getParameter("molho") != null;
+        boolean cbMolho2 = request.getParameter("molho") != null;
+        boolean cbMolho3 = request.getParameter("molho") != null;
+        boolean cbMolho4 = request.getParameter("molho") != null;
+        boolean cbMolho5 = request.getParameter("molho") != null;
+        boolean cbMolho6 = request.getParameter("molho") != null;
+        ArrayList<Boolean> molho = sub.checaItem(cbMolho1, cbMolho2, cbMolho3, cbMolho4, cbMolho5, cbMolho6, false);
+
+        //instâncias 
         Sanduiche sanduba = new Sanduiche(tipoPao, tamanho, recheio, queijo, adicional, vegetal, molho);
-        ArrayList <Sanduiche> snd = new ArrayList <>();
-        sub.setSanduiche(snd);
-        
-        
+        ArrayList<Sanduiche> arrayListSanduba = new ArrayList<>();
+        arrayListSanduba.add(sanduba);
+        sub.setSanduiche(arrayListSanduba);
+
     }
 
     /**
