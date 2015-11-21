@@ -2,10 +2,13 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Sanduiche;
+import model.Subway;
 
 /**
  *
@@ -76,6 +79,11 @@ public class Servlet extends HttpServlet {
         boolean cbAdicional2 = request.getParameter("tomaSeco") != null;
         boolean cbAdicional3 = request.getParameter("chreamCheese") != null;
         
+        ArrayList<Boolean> adicional = new ArrayList<>();
+        adicional.add(cbAdicional1);
+        adicional.add(cbAdicional2);
+        adicional.add(cbAdicional3);
+        
         //pegando vegetais
         boolean cbVegetal1 = request.getParameter("") != null;
         boolean cbVegetal2 = request.getParameter("") != null;
@@ -85,9 +93,29 @@ public class Servlet extends HttpServlet {
         boolean cbVegetal6 = request.getParameter("") != null;
         boolean cbVegetal7 = request.getParameter("") != null;
         
+        ArrayList<Boolean> vegetal = new ArrayList<>();
+        vegetal.add(cbVegetal1);
+        vegetal.add(cbVegetal2);
+        vegetal.add(cbVegetal3);
+        vegetal.add(cbVegetal4);
+        vegetal.add(cbVegetal5);
+        vegetal.add(cbVegetal6);
+        vegetal.add(cbVegetal7);
+        
         //pegando molhos
         boolean cbMolho1 = request.getParameter("") != null;
         boolean cbMolho2 = request.getParameter("") != null;
+        
+        ArrayList<Boolean> molho = new ArrayList<>();
+        molho.add(cbMolho1);
+        molho.add(cbMolho2);
+           
+        Subway sub = new Subway();
+        Sanduiche sanduba = new Sanduiche(tipoPao, tamanho, recheio, queijo, adicional, vegetal, molho);
+        ArrayList <Sanduiche> snd = new ArrayList <>();
+        sub.setSanduiche(snd);
+        
+        
     }
 
     /**

@@ -5,10 +5,22 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Guto Leoni
  */
 public class Subway {
+    
+    private ArrayList<Sanduiche> sanduiche;
+
+    public ArrayList<Sanduiche> getSanduiche() {
+        return sanduiche;
+    }
+
+    public void setSanduiche(ArrayList<Sanduiche> sanduiche) {
+        this.sanduiche = sanduiche;
+    }
     
 }
