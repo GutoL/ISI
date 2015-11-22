@@ -53,13 +53,13 @@ public class Subway {
             item.add(item4);
         }
         if (item5) {
-            item.add(item1);
+            item.add(item5);
         }
         if (item6) {
-            item.add(item1);
+            item.add(item6);
         }
         if (item7) {
-            item.add(item1);
+            item.add(item7);
 
         }
         return item;
