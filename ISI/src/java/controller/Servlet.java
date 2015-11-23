@@ -3,6 +3,8 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -76,9 +78,9 @@ public class Servlet extends HttpServlet {
         Subway sub = new Subway();
 
         //pegando adicionais
-        boolean cbAdicional1 = request.getParameter("bacon") != null;
-        boolean cbAdicional2 = request.getParameter("tomaSeco") != null;
-        boolean cbAdicional3 = request.getParameter("chreamCheese") != null;
+        boolean cbAdicional1 = request.getParameter("adicional") != null;
+        boolean cbAdicional2 = request.getParameter("adicional") != null;
+        boolean cbAdicional3 = request.getParameter("adicional") != null;
 
         ArrayList<Boolean> adicional;
         adicional = sub.checaItem(cbAdicional1, cbAdicional2, cbAdicional3, false, false, false, false);
@@ -108,6 +110,13 @@ public class Servlet extends HttpServlet {
         ArrayList<Sanduiche> arrayListSanduba = new ArrayList<>();
         arrayListSanduba.add(sanduba);
         sub.setSanduiche(arrayListSanduba);
+        
+        
+        List resultado = sub.getBrands();
+        
+        request.setAttribute("styles", resultado);
+        RequestDispatcher view = request.getRequestDispatcher("resultado.jsp");
+        view.forward(request, response);
 
     }
 
