@@ -99,7 +99,7 @@ public class Servlet extends HttpServlet {
         //pegando molhos
         boolean cbMolho1 = request.getParameter("Chipotle") != null;
         boolean cbMolho2 = request.getParameter("Parmesao") != null;
-        boolean cbMolho3 = request.getParameter("Barbacue") != null;
+        boolean cbMolho3 = request.getParameter("Barbecue") != null;
         boolean cbMolho4 = request.getParameter("Maionese") != null;
         boolean cbMolho5 = request.getParameter("Cebola Agridoce") != null;
         boolean cbMolho6 = request.getParameter("Mostarda") != null;
