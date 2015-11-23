@@ -78,31 +78,31 @@ public class Servlet extends HttpServlet {
         Subway sub = new Subway();
 
         //pegando adicionais
-        boolean cbAdicional1 = request.getParameter("adicional") != null;
-        boolean cbAdicional2 = request.getParameter("adicional") != null;
-        boolean cbAdicional3 = request.getParameter("adicional") != null;
+        boolean cbAdicional1 = request.getParameter("Bacon") != null;
+        boolean cbAdicional2 = request.getParameter("Tomate Seco") != null;
+        boolean cbAdicional3 = request.getParameter("Cream Cheese") != null;
 
         ArrayList<Boolean> adicional;
         adicional = sub.checaItem(cbAdicional1, cbAdicional2, cbAdicional3, false, false, false, false);
 
         //pegando vegetais
-        boolean cbVegetal1 = request.getParameter("vegetais") != null;
-        boolean cbVegetal2 = request.getParameter("vegetais") != null;
-        boolean cbVegetal3 = request.getParameter("vegetais") != null;
-        boolean cbVegetal4 = request.getParameter("vegetais") != null;
-        boolean cbVegetal5 = request.getParameter("vegetais") != null;
-        boolean cbVegetal6 = request.getParameter("vegetais") != null;
-        boolean cbVegetal7 = request.getParameter("vegetais") != null;
+        boolean cbVegetal1 = request.getParameter("Alface") != null;
+        boolean cbVegetal2 = request.getParameter("Tomate") != null;
+        boolean cbVegetal3 = request.getParameter("Rucula") != null;
+        boolean cbVegetal4 = request.getParameter("Pimentao") != null;
+        boolean cbVegetal5 = request.getParameter("Pepino") != null;
+        boolean cbVegetal6 = request.getParameter("Cebola") != null;
+        boolean cbVegetal7 = request.getParameter("Azeitona") != null;
 
         ArrayList<Boolean> vegetal = sub.checaItem(cbVegetal1, cbVegetal2, cbVegetal3, cbVegetal4, cbVegetal5, cbVegetal6, cbVegetal7);
 
         //pegando molhos
-        boolean cbMolho1 = request.getParameter("molho") != null;
-        boolean cbMolho2 = request.getParameter("molho") != null;
-        boolean cbMolho3 = request.getParameter("molho") != null;
-        boolean cbMolho4 = request.getParameter("molho") != null;
-        boolean cbMolho5 = request.getParameter("molho") != null;
-        boolean cbMolho6 = request.getParameter("molho") != null;
+        boolean cbMolho1 = request.getParameter("Chipotle") != null;
+        boolean cbMolho2 = request.getParameter("Parmesao") != null;
+        boolean cbMolho3 = request.getParameter("Barbacue") != null;
+        boolean cbMolho4 = request.getParameter("Maionese") != null;
+        boolean cbMolho5 = request.getParameter("Cebola Agridoce") != null;
+        boolean cbMolho6 = request.getParameter("Mostarda") != null;
         ArrayList<Boolean> molho = sub.checaItem(cbMolho1, cbMolho2, cbMolho3, cbMolho4, cbMolho5, cbMolho6, false);
 
         //instâncias 

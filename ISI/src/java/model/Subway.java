@@ -36,28 +36,16 @@ public class Subway {
             boolean item4, boolean item5, boolean item6, boolean item7) {
 
         ArrayList<Boolean> item = new ArrayList<>();
-        if (item1) {
+        
             item.add(item1);
-        }
-        if (item2) {
             item.add(item2);
-        }
-        if (item3) {
             item.add(item3);
-        }
-        if (item4) {
             item.add(item4);
-        }
-        if (item5) {
             item.add(item5);
-        }
-        if (item6) {
             item.add(item6);
-        }
-        if (item7) {
             item.add(item7);
 
-        }
+        
         return item;
     }
     
