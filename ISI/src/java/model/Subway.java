@@ -113,7 +113,7 @@ public class Subway {
         String itens="";
         
         itens+="<b>Tipo do pão:</b> "+sanduiche.get(0).getTipoPao()+";<br>";
-            itens+="<b>Tamanho:</b> "+sanduiche.get(0).getTamanho()+" cm;<br>";
+        itens+="<b>Tamanho:</b> "+sanduiche.get(0).getTamanho()+" cm;<br>";
         itens+="<b>Recheio:</b> "+sanduiche.get(0).getRecheio()+";<br>";
         itens+="<b>Tipo do Queijo:</b> "+sanduiche.get(0).getQueijo()+";<br>";
         itens+="<b>Adicionais:</b> ";
