@@ -66,9 +66,9 @@
 
 </script>
 
-<div class="row">
-<div class="col-md-12">
-<div class="col-md-10">
+
+<div class="container">
+
     <form name="form1" action ="Servlet" method = "post">
                             <div class="row">
                                     <div class="col-sm-4">
@@ -222,17 +222,14 @@
                                                             Mostarda
                                                             </label>
                                                     </div>
-
+                                            
 
                                                     <button type="submit" class="btn btn-success" onClick="Confirmar()" id='btLogin'>
                                                                     <span class="glyphicon glyphicon-thumbs-up" ></span>
                                                                     Confirmar          
                                                             </button><br><br>
 
-                                                    <button type="submit" class="btn btn-danger" onClick="logOut()" id='btLogin'>
-                                                                    <!--<span class="glyphicon glyphicon-thumbs-up" ></span>-->
-                                                                    Fazer Logout            
-                                                            </button>
+                                                    <!-- AQUI-->
 
 
                                                             <div class="row">
@@ -249,9 +246,24 @@
 
 
                     </form>
+    <form>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-push-8">
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-danger" onClick="logOut()" id='btLogout'>
+                     <!--<span class="glyphicon glyphicon-thumbs-up" ></span>-->
+                        Fazer Logout            
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    
 </div>
-</div>
-</div>
+
+
 <!--		
 </body>
 </html>-->

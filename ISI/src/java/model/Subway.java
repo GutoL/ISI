@@ -55,6 +55,7 @@ public class Subway {
         float preco = this.preco();
         String itens = this.itensPedidos();
         
+        
         brands.add("<div class=\"row\">\n" +
 "			<div class=\"col-sm-12\">\n" +
 "				<img alt=\"Brand\" src=\"bootstrap/img/banner.png\" class=\"img-responsive\">\n" +
