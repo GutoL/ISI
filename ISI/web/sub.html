@@ -66,186 +66,192 @@
 
 </script>
 
-<form name="form1" action ="Servlet" method = "post">
-			<div class="row">
-				<div class="col-sm-4">
-					
-					<h4 for="nome" id="nomefb"></h4>
-					<fieldset>
-						
-						<legend>Pão</legend>
-						<select name="tipo-pao" id="tipo-pao" class="form-control">
-							<option value="Italiano">Italiano Branco</option>
-							<option value="9 Graos">9 Grãos</option>
-							<option value="Parmesao e Oregano">Parmesão e Orégano</option>
-							<option value="Tres Queijos">Três Queijos</option>
-							<option value="9 Graos com Aveia e Mel">9 Grãos com Aveia e Mel</option>
-						</select> <br>
-						
-						
-						<legend>Tamanho</legend>
-							<input type="radio" name="tamanho" value="15" checked>15 cm<br>
-							<input type="radio" name="tamanho" value="30">30 cm	<br><br>	
-						
-						
-						<legend>Recheio</legend>
-						<select name="tipo-recheio" id="tipo-recheio" class="form-control">
-							<option value="Frango Teriaki">Frango Teriaki</option>
-							<option value="B.M.T.">B.M.T.</option>
-							<option value="Frango e Bacon Sublime">Frango e Bacon Sublime</option>
-							<option value="Vegetariano">Vegetariano</option>
-							<option value="Italiano">Italiano</option>
-						</select><br>
-				
-						<legend>Queijos</legend>
-						<select name="tipo-queijo" id="tipo-queijo" class="form-control">
-							<option value="Suico">Suíço</option>
-							<option value="Prato">Prato</option>
-							<option value="Cheddar">Cheddar</option>
-						</select><br>
-						
-						
-						
-						
-					</fieldset>
-					
-					
-				</div>
-				
-				<div class="col-md-4">
-					
-					<legend>Adicionais</legend>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Bacon">
-							Bacon
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Tomate Seco" >
-							Tomate Seco
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Cream Cheese" >
-							Cream Cheese
-							</label>
-						</div><br>
-						
-						<legend>Vegetais</legend>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Alface" >
-							Alface
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Tomate" >
-							Tomate
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Rucula" >
-							Rúcula
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Pimentao" >
-							Pimentão
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Pepino" >
-							Pepino
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Cebola" >
-							Cebola
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Azeitona" >
-							Azeitona
-							</label>
-						</div>
-						
-				
-				</div>
-				<div class="col-md-4">
-				
-					<legend>Molhos (selecione apenas dois molhos)</legend>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Chipotle" id="molho" onclick="verificar()">
-							Chipotle
-							</label>
-						</div>  
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Parmesao" id="molho" onclick="verificar()">
-							Parmesão
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Barbecue" id="molho" onclick="verificar()">
-							Barbecue
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Maionese" id="molho" onclick="verificar()">
-							Maionese
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Cebola Agridoce" id="molho" onclick="verificar()">
-							Cebola Agridoce
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-							<input type="checkbox" value="ON" name="Mostarda" id="molho" onclick="verificar()">
-							Mostarda
-							</label>
-						</div>
-						
-					
-						<button type="submit" class="btn btn-success" onClick="Confirmar()" id='btLogin'>
-								<span class="glyphicon glyphicon-thumbs-up" ></span>
-								Confirmar          
-							</button><br><br>
-							
-						<button type="submit" class="btn btn-danger" onClick="logOut()" id='btLogin'>
-								<!--<span class="glyphicon glyphicon-thumbs-up" ></span>-->
-								Fazer Logout            
-							</button>
-							
-							
-							<div class="row">
-								<div class="col-sm-6">
-									<br><img alt="Brand" src="bootstrap/img/sanduiche.jpg" class="img-responsive">
-								</div>
-							</div>
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-10">
+    <form name="form1" action ="Servlet" method = "post">
+                            <div class="row">
+                                    <div class="col-sm-4">
 
-				</div>
-				
-				
-			</div>
-			
-			
-			
-		</form>
+                                            <h4 for="nome" id="nomefb"></h4>
+                                            <fieldset>
+
+                                                    <legend>Pão</legend>
+                                                    <select name="tipo-pao" id="tipo-pao" class="form-control">
+                                                            <option value="Italiano">Italiano Branco</option>
+                                                            <option value="9 Graos">9 Grãos</option>
+                                                            <option value="Parmesao e Oregano">Parmesão e Orégano</option>
+                                                            <option value="Tres Queijos">Três Queijos</option>
+                                                            <option value="9 Graos com Aveia e Mel">9 Grãos com Aveia e Mel</option>
+                                                    </select> <br>
+
+
+                                                    <legend>Tamanho</legend>
+                                                            <input type="radio" name="tamanho" value="15" checked>15 cm<br>
+                                                            <input type="radio" name="tamanho" value="30">30 cm	<br><br>	
+
+
+                                                    <legend>Recheio</legend>
+                                                    <select name="tipo-recheio" id="tipo-recheio" class="form-control">
+                                                            <option value="Frango Teriaki">Frango Teriaki</option>
+                                                            <option value="B.M.T.">B.M.T.</option>
+                                                            <option value="Frango e Bacon Sublime">Frango e Bacon Sublime</option>
+                                                            <option value="Vegetariano">Vegetariano</option>
+                                                            <option value="Italiano">Italiano</option>
+                                                    </select><br>
+
+                                                    <legend>Queijos</legend>
+                                                    <select name="tipo-queijo" id="tipo-queijo" class="form-control">
+                                                            <option value="Suico">Suíço</option>
+                                                            <option value="Prato">Prato</option>
+                                                            <option value="Cheddar">Cheddar</option>
+                                                    </select><br>
+
+
+
+
+                                            </fieldset>
+
+
+                                    </div>
+
+                                    <div class="col-md-4">
+
+                                            <legend>Adicionais</legend>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Bacon">
+                                                            Bacon
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Tomate Seco" >
+                                                            Tomate Seco
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Cream Cheese" >
+                                                            Cream Cheese
+                                                            </label>
+                                                    </div><br>
+
+                                                    <legend>Vegetais</legend>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Alface" >
+                                                            Alface
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Tomate" >
+                                                            Tomate
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Rucula" >
+                                                            Rúcula
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Pimentao" >
+                                                            Pimentão
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Pepino" >
+                                                            Pepino
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Cebola" >
+                                                            Cebola
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Azeitona" >
+                                                            Azeitona
+                                                            </label>
+                                                    </div>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                            <legend>Molhos (selecione apenas dois molhos)</legend>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Chipotle" id="molho" onclick="verificar()">
+                                                            Chipotle
+                                                            </label>
+                                                    </div>  
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Parmesao" id="molho" onclick="verificar()">
+                                                            Parmesão
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Barbecue" id="molho" onclick="verificar()">
+                                                            Barbecue
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Maionese" id="molho" onclick="verificar()">
+                                                            Maionese
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Cebola Agridoce" id="molho" onclick="verificar()">
+                                                            Cebola Agridoce
+                                                            </label>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                            <label>
+                                                            <input type="checkbox" value="ON" name="Mostarda" id="molho" onclick="verificar()">
+                                                            Mostarda
+                                                            </label>
+                                                    </div>
+
+
+                                                    <button type="submit" class="btn btn-success" onClick="Confirmar()" id='btLogin'>
+                                                                    <span class="glyphicon glyphicon-thumbs-up" ></span>
+                                                                    Confirmar          
+                                                            </button><br><br>
+
+                                                    <button type="submit" class="btn btn-danger" onClick="logOut()" id='btLogin'>
+                                                                    <!--<span class="glyphicon glyphicon-thumbs-up" ></span>-->
+                                                                    Fazer Logout            
+                                                            </button>
+
+
+                                                            <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                            <br><img alt="Brand" src="bootstrap/img/sanduiche.jpg" class="img-responsive">
+                                                                    </div>
+                                                            </div>
+
+                                    </div>
+
+
+                            </div>
+
+
+
+                    </form>
+</div>
+</div>
+</div>
 <!--		
 </body>
 </html>-->
