@@ -109,7 +109,7 @@ public class Subway {
         if(sanduiche.get(0).getAdicionais().contains(true)){
             if(sanduiche.get(0).getAdicionais().get(0)) itens+="Bacon; "; 
             if(sanduiche.get(0).getAdicionais().get(1)) itens+="Tomate Seco; ";
-            if(sanduiche.get(0).getAdicionais().get(2)) itens+="Cheam Cheese; ";
+            if(sanduiche.get(0).getAdicionais().get(2)) itens+="Cream Cheese; ";
         } else{
             itens+="Nada consta; ";
         }
