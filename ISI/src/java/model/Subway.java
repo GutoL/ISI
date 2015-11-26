@@ -98,7 +98,7 @@ public class Subway {
     }
     
     private String itensPedidos(){
-    
+        //Adicionando timeout
         String itens="";
         
         itens+="<b>Tipo do pão:</b> "+sanduiche.get(0).getTipoPao()+";<br>";
