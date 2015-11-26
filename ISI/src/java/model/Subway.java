@@ -99,45 +99,105 @@ public class Subway {
     
     private String itensPedidos(){
         //Adicionando timeout
+        
+        ArrayList<String> values = new ArrayList<>();
+        
+        
         String itens="";
         
         itens+="<b>Tipo do pão:</b> "+sanduiche.get(0).getTipoPao()+";<br>";
+        values.add(sanduiche.get(0).getTipoPao());
         itens+="<b>Tamanho:</b> "+sanduiche.get(0).getTamanho()+" cm;<br>";
+        values.add(Integer.toString(sanduiche.get(0).getTamanho()));
         itens+="<b>Recheio:</b> "+sanduiche.get(0).getRecheio()+";<br>";
+        values.add(sanduiche.get(0).getRecheio());
         itens+="<b>Tipo do Queijo:</b> "+sanduiche.get(0).getQueijo()+";<br>";
-        itens+="<b>Adicionais:</b> ";
+        values.add(sanduiche.get(0).getQueijo());
         
+        itens+="<b>Adicionais:</b> ";
+        String adicionais = "";
         if(sanduiche.get(0).getAdicionais().contains(true)){
-            if(sanduiche.get(0).getAdicionais().get(0)) itens+="Bacon; "; 
-            if(sanduiche.get(0).getAdicionais().get(1)) itens+="Tomate Seco; ";
-            if(sanduiche.get(0).getAdicionais().get(2)) itens+="Cream Cheese; ";
+            
+            if(sanduiche.get(0).getAdicionais().get(0)){
+                itens+="Bacon; ";
+                adicionais += "Bacon;";
+            } 
+            if(sanduiche.get(0).getAdicionais().get(1)){
+                itens+="Tomate Seco; ";
+                adicionais +="Tomate Seco;";
+            }
+            if(sanduiche.get(0).getAdicionais().get(2)){
+                itens+="Cream Cheese; ";
+                adicionais +="Cream Cheese;";
+            }
         } else{
             itens+="Nada consta; ";
+            adicionais+="Nada";
         }
             
         itens+="<br><b>Vegetais:</b> ";
+        String vegetais ="";
         if(sanduiche.get(0).getVegetais().contains(true)){
             if(sanduiche.get(0).getVegetais().get(0)) itens+="Alface; "; 
+            if(sanduiche.get(0).getVegetais().get(0)) vegetais+="Alface; "; 
+            
             if(sanduiche.get(0).getVegetais().get(1)) itens+="Tomate; ";
+            if(sanduiche.get(0).getVegetais().get(1)) vegetais+="Tomate; ";
+            
             if(sanduiche.get(0).getVegetais().get(2)) itens+="Rucula; ";
-            if(sanduiche.get(0).getVegetais().get(3)) itens+="Pimentao; "; 
+            if(sanduiche.get(0).getVegetais().get(2)) vegetais+="Rucula; ";
+            
+            if(sanduiche.get(0).getVegetais().get(3)) itens+="Pimentao; ";
+            if(sanduiche.get(0).getVegetais().get(3)) vegetais+="Pimentao; ";
+            
             if(sanduiche.get(0).getVegetais().get(4)) itens+="Pepino; ";
+            if(sanduiche.get(0).getVegetais().get(4)) vegetais+="Pepino; ";
+            
             if(sanduiche.get(0).getVegetais().get(5)) itens+="Cebola; ";
+            if(sanduiche.get(0).getVegetais().get(5)) vegetais+="Cebola; ";
+
             if(sanduiche.get(0).getVegetais().get(6)) itens+="Azeitona; ";
+            if(sanduiche.get(0).getVegetais().get(6)) vegetais+="Azeitona; ";
+            
         } else{
             itens+="Nada consta; ";
+            vegetais+="Nada";
         }
         
         itens+="<br><b>Molhos:</b> ";
+        String molhos = "";
         if(sanduiche.get(0).getMolhos().contains(true)){
             if(sanduiche.get(0).getMolhos().get(0)) itens+="Chipotle; "; 
+            if(sanduiche.get(0).getMolhos().get(0)) molhos+="Chipotle; "; 
+            
             if(sanduiche.get(0).getMolhos().get(1)) itens+="Parmesão; ";
+            if(sanduiche.get(0).getMolhos().get(1)) molhos+="Parmesão; ";
+            
             if(sanduiche.get(0).getMolhos().get(2)) itens+="Babercue; ";
+            if(sanduiche.get(0).getMolhos().get(2)) molhos+="Babercue; ";
+            
             if(sanduiche.get(0).getMolhos().get(3)) itens+="Maionese; "; 
+            if(sanduiche.get(0).getMolhos().get(3)) molhos+="Maionese; "; 
+            
             if(sanduiche.get(0).getMolhos().get(4)) itens+="Cebola Agridoce; ";
+            if(sanduiche.get(0).getMolhos().get(4)) molhos+="Cebola Agridoce; ";
+            
             if(sanduiche.get(0).getMolhos().get(5)) itens+="Mostarda; ";
+            if(sanduiche.get(0).getMolhos().get(5)) molhos+="Mostarda; ";
         } else{
             itens+="Nada consta; ";
+            molhos+="Nada";
+        }
+        
+        values.add(adicionais);
+        values.add(vegetais);
+        values.add(molhos);
+        String resposta = "nada...";
+        String sql = "INSERT INTO `venda`(`pao`, `tamanho`, `recheio`, `queijo`, `adicionais`, `vegetais`, `molho`) VALUES ('"+values.get(0)+"','"+values.get(1)+"','"+values.get(2)+"','"+values.get(3)+"','"+values.get(4)+"','"+values.get(5)+"','"+values.get(6)+"')"; 
+        try{
+        resposta  = DbConnection.executeUpdate(sql);
+        }catch(Exception ex){
+            itens+= "<br>ERRRRRRRRRRROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO";
         }
         
         return itens;
