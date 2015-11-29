@@ -162,7 +162,7 @@
         </tr>
     <%
             
-    for(int i = 0; i < vendas.size(); i++) {
+    for(int i = vendas.size() - 1; i >= 0; i--) {
         out.print("<tr>");
         out.print("<td>" + vendas.get(i).pao + "</td>"
         + "<td>" + vendas.get(i).tamanho + "</td>"
