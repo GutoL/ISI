@@ -14,6 +14,7 @@
 		<script type="text/javascript">
 		
 		var nomeUsuario;
+                var id;
 		
 		/////////////////////////////////////////////////CÓDIGO DO FACEBOOK///////////////////////////////////////////////////////////////////////////
 		
@@ -50,7 +51,8 @@
 				if(response.status === 'connected'){
 					
 					FB.api('/me',function(response){
-					nomeUsuario = response.name;
+                                            nomeUsuario = response.name;
+                                            id = response.userID;
 					});
 					
 					//$('#status').append('<a href="javascript:void(0);" id= "logout" onclick="logOut();"> Sair </a>');
