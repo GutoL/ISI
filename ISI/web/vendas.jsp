@@ -18,42 +18,52 @@
     </head>
     <body>
         <div class='container'>
+            <div class ="jumbotron">
             <h1>Relatório de vendas</h1>
-        <h2>Pães</h2>
-        <p>Gráfico em pizza de venda de pães</p>
-        <script type='text/javascript'>
-        var italiano = 0;
-        var ng = 0;
-        var peo = 0;
-        var tq = 0;
-        var ngam = 0;
-        <%
-
-            ArrayList<Venda> vendas = DbConnection.executeQuery();
-            
-            for(int i = 0; i < vendas.size(); i++) {
-
-                if(vendas.get(i).pao.equals("Italiano")){
-                    out.print("italiano++;");
-                }
-                if(vendas.get(i).pao.equals("9 Graos")){
-                    out.print("ng++;");
-                }
-                if(vendas.get(i).pao.equals("Parmesao e Oregano")){
-                    out.print("peo++;");
-                }
-                if(vendas.get(i).pao.equals("Tres Queijos")){
-                    out.print("tq++;");
-                }
-                if(vendas.get(i).pao.equals("9 Graos com Aveia e Mel")){
-                    out.print("ngam++;");
-                }
+            </div>
+        
+        <div class="panel panel-primary">
+        
+            <div class="panel-heading">
                 
-            }
-            
-        %>
+                <h2 class="panel-title">Pães</h2>
+                
+            </div>
         
-        
+            <p>Gráfico em pizza de venda de pães</p>
+            <script type='text/javascript'>
+            var italiano = 0;
+            var ng = 0;
+            var peo = 0;
+            var tq = 0;
+            var ngam = 0;
+            <%
+
+                ArrayList<Venda> vendas = DbConnection.executeQuery();
+
+                for(int i = 0; i < vendas.size(); i++) {
+
+                    if(vendas.get(i).pao.equals("Italiano")){
+                        out.print("italiano++;");
+                    }
+                    if(vendas.get(i).pao.equals("9 Graos")){
+                        out.print("ng++;");
+                    }
+                    if(vendas.get(i).pao.equals("Parmesao e Oregano")){
+                        out.print("peo++;");
+                    }
+                    if(vendas.get(i).pao.equals("Tres Queijos")){
+                        out.print("tq++;");
+                    }
+                    if(vendas.get(i).pao.equals("9 Graos com Aveia e Mel")){
+                        out.print("ngam++;");
+                    }
+
+                }
+
+            %>
+
+
         
         
         
@@ -83,8 +93,13 @@
       
     </script>
         <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </div>
         
-        <h2>Sabores</h2>
+    <div class="panel panel-primary">        
+        
+        <div class="panel-heading">
+            <h2 class="panel-title">Sabores</h2>
+        </div>
         <p>Gráfico em pizza de venda dos sabores</p>
         <script type='text/javascript'>
         var ft = 0;
@@ -147,7 +162,12 @@
     </script>
     <div id="piechart2" style="width: 900px; height: 500px;"></div>
         
-    <h3>Histórico de vendas </h3>
+    </div>
+    
+    <div class="panel panel-primary">
+       <div class="panel-heading"> 
+            <h3 class="panel-title">Histórico de vendas </h3>
+       </div>
     <div >
     <p>Relatório geral de vendas:</p><br/>
     <table class='table'>
@@ -181,6 +201,7 @@
     </table>
     </div>
     </div>
+   </div>
     
     </body>
 </html>
