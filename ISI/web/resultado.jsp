@@ -56,7 +56,8 @@
         <div class="row">
             <div class="col-md-8 col-md-push-5">
                 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
-                <input type="button" value="Voltar" onClick="history.go(-1)" class="btn btn-danger" > 
+                <input type="button" value="Voltar" onClick="history.go(-1)" class="btn btn-danger" >
+                
             </div>
         </div>
         
