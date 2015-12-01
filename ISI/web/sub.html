@@ -56,12 +56,20 @@
 </div>
 
 -->
+<div id="admin"></div>
 <script>
 	
-	var palavra = "Olá "+nomeUsuario+", monte seu sanduíche! teste";
+	var palavra = "Olá "+nomeUsuario+", monte seu sanduíche!";
+        
 	$('#nomefb').text(palavra).attr({
 		title:"Monte seu sanduiche!"
 					});
+                                        
+        if(id == 867069190074005){                                
+        var adminBtn = "<a href='vendas.jsp'><button  type='button' class='btn btn-primary'>Controle de vendas</button></a>";
+        document.getElementById("admin").innerHTML = adminBtn;
+        
+        }      
 	
 
 </script>
@@ -78,7 +86,7 @@
 
                                                     <legend>Pão</legend>
                                                     <select name="tipo-pao" id="tipo-pao" class="form-control">
-                                                            <option value="Italiano">Italiano Branco</option>
+                                                            <option value="Italiano">Italiano</option>
                                                             <option value="9 Graos">9 Grãos</option>
                                                             <option value="Parmesao e Oregano">Parmesão e Orégano</option>
                                                             <option value="Tres Queijos">Três Queijos</option>
@@ -255,6 +263,7 @@
                      <!--<span class="glyphicon glyphicon-thumbs-up" ></span>-->
                         Fazer Logout            
                     </button>
+                    
                 </div>
             </div>
         </div>
