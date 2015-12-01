@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author Guto Leoni
+ * @author Arthur e Leylane 
  */
 public class Subway {
 
